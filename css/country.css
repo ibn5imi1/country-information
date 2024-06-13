@@ -1,0 +1,261 @@
+:root {
+    --first-dark-color: #2b3743;
+    --second-dark-color: #202d36;
+    --first-light-color: #ffffff;
+    --second-light-color: #fafafa;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 80px;
+    padding: 20px;
+}
+
+/* start loader */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid var(--first-dark-color);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* end loader */
+
+/* start header */
+header {
+    background-color: var(--first-light-color);
+    box-shadow: 0px -10px 12px 5px black;
+    margin-bottom: 40px;
+}
+
+header.dark {
+    background-color: var(--first-dark-color);
+}
+
+header.dark p,
+header.dark h3 {
+    color: var(--first-light-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .mood {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+header.dark .container .mood i {
+    color: #fff;
+}
+
+header .container .mood p {
+    margin-left: 10px;
+    user-select: none;
+}
+
+/* end header */
+
+
+
+/* start nav */
+.back-btn button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: var(--first-light-color);
+    border: none;
+    box-shadow: 0px 0px 9px -3px black;
+}
+
+.back-btn button.dark {
+    background-color: var(--first-dark-color);
+    color: var(--first-light-color);
+}
+
+.back-btn button i {
+    margin-right: 10px;
+}
+
+/* end nav */
+
+
+/* start main */
+.country-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.country-container .flag {
+    width: 50%;
+}
+
+.country-container .flag img {
+    width: 100%;
+    height: 400px;
+}
+
+.country-container .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.country-container .info .left {
+    margin-right: 50px;
+}
+
+.country-container .info h2 {
+    margin-bottom: 30px;
+}
+
+.country-container.dark .info h2 {
+    color: var(--first-light-color);
+}
+
+.country-container .info h3 {
+    margin-bottom: 15px;
+}
+
+.country-container .info h3 span {
+    color: gray;
+}
+
+.country-container.dark .info h3 {
+    color: var(--first-light-color);
+}
+
+.country-container.dark .info h3 span {
+    color: #eeeeeec2;
+}
+
+.borders {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.borders.dark h3 {
+    color: var(--first-light-color);
+}
+
+.borders .border-countries {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+
+.borders .border-countries div {
+    margin-right: 10px;
+    padding: 5px 10px;
+    box-shadow: 0px 0px 9px -3px black;
+    cursor: pointer;
+}
+
+.borders.dark .border-countries div {
+    color: var(--first-light-color);
+}
+
+/* end main */
+
+/* start media query */
+
+@media (max-width: 992px) {
+    .container {
+        margin: 0 40px;
+    }
+
+    header {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    nav .container .search {
+        width: 360px;
+        margin-bottom: 10px;
+    }
+
+    nav .container .search input {
+        width: 90%;
+    }
+
+    nav .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1300px) {
+    .country-container {
+        flex-direction: column;
+    }
+
+    .country-container .info {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        margin: 0 20px;
+        padding: 20px;
+    }
+
+    .country-container .flag {
+        width: 100%;
+    }
+
+    .country-container .flag img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .country-container .info {
+        flex-direction: column;
+        align-items: start;
+    }
+        .borders .border-countries {
+            align-items: start;
+        }
+    .borders .border-countries div {
+        margin: 10px;
+    }
+}
+
+/* end media query */
